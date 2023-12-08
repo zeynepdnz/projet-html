@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Challenges</title>
+</head>
+<body>
+
+  <h1>Puzzle Challenges</h1>
+
+  <!-- Challenge One -->
+  <script>
+    let message = "There is no war in Ba Sing Se";
+
+    function countWords(message) {
+      let words = message.split(/\s+/);
+      return words.length;
+    }
+
+    console.log("Challenge One:", countWords(message));
+  </script>
+
+  <!-- Challenge Two -->
+  <script>
+    let countries = ['China', 'Japan', 'South Korea', 'Vietnam', 'Malaysia'];
+    let capitals = ['Beijing', 'Tokyo', 'Seoul', 'Hanoï', 'Kuala Lumpur'];
+
+    function displayCountriesWithCapitals(countries, capitals) {
+      for (let i = 0; i < countries.length; i++) {
+        console.log(`Your country: ${countries[i]} has the capital named: ${capitals[i]}.`);
+      }
+    }
+
+    console.log("Challenge Two:");
+    displayCountriesWithCapitals(countries, capitals);
+  </script>
+
+  <!-- Challenge Three -->
+  <script>
+    let randomizer = Math.floor(Math.random() * 4);
+
+    function determineFate(randomizer) {
+      if (randomizer === 0) {
+        return "A certain victory";
+      } else if (randomizer === 1) {
+        return "not so certain victory";
+      } else if (randomizer === 2) {
+        return "an uneasy victory";
+      } else {
+        return "Your fate is unclear, ô chosen undead";
+      }
+    }
+
+    console.log("Challenge Three:", determineFate(randomizer));
+  </script>
+
+  <!-- Challenge Four -->
+  <script>
+    function checkSeason(month) {
+      switch (month.toLowerCase()) {
+        case 'december':
+        case 'january':
+        case 'february':
+          return 'Winter';
+        case 'march':
+        case 'april':
+        case 'may':
+          return 'Spring';
+        case 'june':
+        case 'july':
+        case 'august':
+          return 'Summer';
+        case 'september':
+        case 'october':
+        case 'november':
+          return 'Autumn';
+        default:
+          return 'Invalid month';
+      }
+    }
+
+    console.log("Challenge Four:", checkSeason("April"));
+  </script>
+
+</body>

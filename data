@@ -1,0 +1,112 @@
+function filterEvenNumbers(numbers) {
+  return numbers.filter(number => number % 2 === 0);
+}
+
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(filterEvenNumbers(numbersArray));
+
+function filterPeopleOver30(people) {
+  return people.filter(person => person.age > 30);
+}
+
+const peopleArray = [
+  { name: "John", age: 25, email: "john@example.com" },
+  { name: "Jane", age: 35, email: "jane@example.com" },
+  { name: "Bob", age: 28, email: "bob@example.com" }
+];
+
+console.log(filterPeopleOver30(peopleArray));
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.items.length === 0) return "Underflow";
+    return this.items.pop();
+  }
+
+  peek() {
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+}
+
+const stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+console.log(stack.items);
+console.log(stack.pop());
+console.log(stack.peek());
+console.log(stack.isEmpty());
+console.log(stack.size());
+
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  dequeue() {
+    if (this.items.length === 0) return "Underflow";
+    return this.items.shift();
+  }
+
+  front() {
+    return this.items[0];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+}
+
+const queue = new Queue();
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+console.log(queue.items);
+console.log(queue.dequeue());
+console.log(queue.front());
+console.log(queue.isEmpty());
+console.log(queue.size());
+
+function removeVowels(inputString) {
+  return inputString.replace(/[aeiouAEIOU]/g, "");
+}
+
+const inputString = "Hello, World!";
+console.log(removeVowels(inputString));
+
+function mergeAndRemoveDuplicates(array1, array2) {
+  const mergedArray = array1.concat(array2);
+  return Array.from(new Set(mergedArray));
+}
+
+const array1 = [1, 2, 3, 4];
+const array2 = [3, 4, 5, 6];
+console.log(mergeAndRemoveDuplicates(array1, array2));
+
+
+
+

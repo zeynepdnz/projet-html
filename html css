@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To-Do App</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+document.addEventListener('DOMContentLoaded', function () {
+        const storedTasks=JSON.parse(localStorage.getItem('tasks')) || [];
+        const taskList=document.getElementById('taskList');
+
+        storedTasks.forEach(task=> {
+                const newTask=document.createElement('li');
+                newTask.textContent=task;
+                taskList.appendChild(newTask);
+            });
+    });
+
+function addTask() {
+    const taskInput=document.getElementById('taskInput');
+    const taskList=document.getElementById('taskList');
+
+    if (taskInput.value.trim() !=='') {
+        const newTask=document.createElement('li');
+        newTask.textContent=taskInput.value;
+        taskList.appendChild(newTask);
+
+        const storedTasks=JSON.parse(localStorage.getItem('tasks')) || [];
+        storedTasks.push(taskInput.value);
+        localStorage.setItem('tasks', JSON.stringify(storedTasks));
+
+        taskInput.value='';
+    }
+}
